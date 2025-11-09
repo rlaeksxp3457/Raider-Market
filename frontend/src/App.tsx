@@ -10,7 +10,7 @@ function App() {
         const response = await fetch('http://localhost:3000/api/health')
         if (!response.ok) throw new Error('API not available')
         return await response.json()
-      } catch (error) {
+      } catch {
         return { status: 'disconnected', message: 'Backend not available' }
       }
     },

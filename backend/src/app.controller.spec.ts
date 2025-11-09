@@ -15,8 +15,17 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return "Raider Market API"', () => {
+      expect(appController.getHello()).toBe('Raider Market API');
+    });
+  });
+
+  describe('health', () => {
+    it('should return health status', () => {
+      const health = appController.getHealth();
+      expect(health).toHaveProperty('status', 'ok');
+      expect(health).toHaveProperty('message', 'Backend is running');
+      expect(health).toHaveProperty('timestamp');
     });
   });
 });
